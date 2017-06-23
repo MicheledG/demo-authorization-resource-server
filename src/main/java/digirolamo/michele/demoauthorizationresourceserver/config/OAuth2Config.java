@@ -31,9 +31,12 @@ public class OAuth2Config extends AuthorizationServerConfigurerAdapter {
 	@Override
 	public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
 		
+		/*
+		 * Store in memory AUTHORIZED APPLICATIONS TO USE THIS WONDERFUL API!
+		 */
 	 	clients.inMemory()
 	        .withClient("my-client-app")
-	            .authorizedGrantTypes("password")
+	            .authorizedGrantTypes("password", "client_credentials")
 	            .secret("secret");
 	}
 	

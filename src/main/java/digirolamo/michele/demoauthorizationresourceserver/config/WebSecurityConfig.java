@@ -16,8 +16,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void globalUserDetails(final AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-		  .withUser("ciccio").password("pasticcio").roles("USER");
+		
+    	/*
+    	 * store in memory the authorized users to access some endpoints of the API (e.g. /myProfile)
+    	 */
+    	auth.inMemoryAuthentication()
+		  .withUser("ciccio").password("pasticcio").roles("USER")
+		  .and()
+		  .withUser("pippo").password("pluto").roles("ADMIN");
     }
 
     @Override

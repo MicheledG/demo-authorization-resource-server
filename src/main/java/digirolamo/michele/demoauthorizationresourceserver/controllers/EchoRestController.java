@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import digirolamo.michele.demoauthorizationresourceserver.model.EchoMessage;
 
+/*
+ * Simple controller that returns back a message received in a JSON
+ * This REST API endpoint can be used only by authorized Client Application (see OAuth2Config)
+ */
 @RestController
 public class EchoRestController {
 	
