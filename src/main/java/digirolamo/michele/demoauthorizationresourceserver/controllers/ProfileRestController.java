@@ -27,7 +27,6 @@ public class ProfileRestController {
 	 * NOTE: there is no need to use API /profiles/<user-id> because the userid is linked with the access token
 	 */
 	@RequestMapping(value="/myProfile", method=RequestMethod.GET)
-	@PreAuthorize("#oauth2.isUser()")
 	public ResponseEntity<Map<String, String>> getProfileInfo(){
 		OAuth2Authentication oauth2 = (OAuth2Authentication) SecurityContextHolder.getContext().getAuthentication();
 		Map<String, String> responseMap = new HashMap<>();	
