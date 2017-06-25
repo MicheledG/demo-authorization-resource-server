@@ -18,7 +18,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void globalUserDetails(final AuthenticationManagerBuilder auth) throws Exception {
 		
     	/*
-    	 * store in memory the authorized users to access some endpoints of the API (e.g. /myProfile)
+    	 * store in memory the authorized users
     	 */
     	auth.inMemoryAuthentication()
 		  .withUser("ciccio").password("pasticcio").roles("USER")
